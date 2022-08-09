@@ -8,7 +8,8 @@
 
 int _printf(const char *format, ...)
 {
-	char *input, *s;
+	const char *input;
+	char *s;
 	unsigned int i, count = 0;
 
 	va_list args;
@@ -54,9 +55,9 @@ int _printf(const char *format, ...)
 
 int str_len(char *s)
 {
-	int length = 0;
+	int length = 0, i;
 
-	for (int i = 0; s[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 		length++;
 	return (length);
 }
