@@ -119,7 +119,7 @@ int print_int(va_list types, char buffer[],
 	n = convert_size_number(n, size);
 
 	if (n == 0)
-		buffer[i++] = '0';
+		buffer[i--] = '0';
 
 	buffer[BUFF_SIZE - 1] = '\0';
 	num = (unsigned long int)n;
@@ -133,7 +133,7 @@ int print_int(va_list types, char buffer[],
 	while (num > 0)
 	{
 		buffer[i--] = (num % 10) + '0';
-		num /= 10;
+		num = num / 10;
 	}
 
 	i++;
